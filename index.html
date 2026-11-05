@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNA 광고 운영 허브</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 로그인 화면 -->
+  <section id="login" class="login">
+    <div class="login-card">
+      <div class="logo">SNA <span>hub</span></div>
+      <p class="login-sub">광고 운영 현황과 성과를 한 곳에서 확인합니다.<br>팀원 구글 계정으로 로그인해 주세요.</p>
+      <button id="btn-login" class="btn btn-primary">구글 계정으로 로그인</button>
+      <button id="btn-demo" class="btn btn-ghost">로그인 없이 데모 화면 보기</button>
+      <p id="login-msg" class="login-msg" role="alert"></p>
+      <p class="login-note">데모 화면은 가짜 데이터입니다. 실제 업체 정보는 로그인 후에만 표시됩니다.</p>
+    </div>
+  </section>
+
+  <!-- 앱 화면 -->
+  <div id="app" class="app" hidden>
+    <aside class="side">
+      <div class="logo">SNA <span>hub</span></div>
+      <nav class="nav">
+        <button class="nav-item" data-route="ops">운영 현황</button>
+        <button class="nav-item" data-route="perf">광고 성과</button>
+      </nav>
+      <div class="side-foot">
+        <div id="mode-label" class="mode-label"></div>
+        <button id="btn-reload" class="btn btn-small">새로고침</button>
+        <button id="btn-logout" class="btn btn-small btn-ghost">로그아웃</button>
+      </div>
+    </aside>
+    <main class="main">
+      <div id="banner" class="banner" hidden></div>
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>
